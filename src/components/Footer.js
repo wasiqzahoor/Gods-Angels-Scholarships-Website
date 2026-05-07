@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export default function Footer({
-  companyName = 'Scholarship Program',
+  companyName = 'Gods Angels Scholarships',
   companyInfo = {
     address: '123 Education Street, City, State 12345',
     email: 'info@scholarship.com',
