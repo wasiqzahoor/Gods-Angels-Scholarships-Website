@@ -1,0 +1,394 @@
+@import "tailwindcss";
+
+/* ============================================
+   SCHOLARSHIP THEME - COLOR SYSTEM
+   ============================================ */
+
+:root {
+  /* Primary Color - Trust Blue */
+  --color-primary: #1E40AF;
+  --color-primary-hover: #1D4ED8;
+  
+  /* Secondary Colors - Soft Gray */
+  --color-gray-light: #F8FAFC;
+  --color-gray-border: #E5E7EB;
+  --color-gray-text: #6B7280;
+  --color-black: #000000;
+
+  
+  /* Accent Color - Success Green */
+  --color-success: #16A34A;
+  
+  /* Background Colors */
+  --color-bg-main: #FFFFFF;
+  --color-bg-alt: #F9FAFB;
+  
+  /* Footer Colors */
+  --color-footer-bg: #0F172A;
+  --color-footer-text: #E5E7EB;
+  
+  /* Form Colors */
+  --color-input-border: #D1D5DB;
+  --color-error: #DC2626;
+  
+  /* Slider Overlay */
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  
+  /* Typography */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Legacy variables for compatibility */
+  --background: var(--color-bg-main);
+  --foreground: #111827;
+}
+
+/* ============================================
+   TAILWIND V4 THEME CONFIGURATION
+   ============================================ */
+
+@theme {
+  /* Color System - Custom Colors */
+  --color-primary: #1E40AF;
+  --color-primary-hover: #1D4ED8;
+  --color-gray-light: #F8FAFC;
+  --color-gray-border: #E5E7EB;
+  --color-gray-text: #6B7280;
+  --color-success: #16A34A;
+  --color-bg-main: #FFFFFF;
+  --color-bg-alt: #F9FAFB;
+  --color-footer-bg: #0F172A;
+  --color-footer-text: #E5E7EB;
+  --color-input-border: #D1D5DB;
+  --color-error: #DC2626;
+  
+  /* Typography */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Font Sizes */
+  --font-size-h1: 42px;
+  --font-size-h2: 28px;
+  --font-size-body: 16px;
+  --font-size-button: 16px;
+}
+
+/* ============================================
+   TYPOGRAPHY SYSTEM
+   ============================================ */
+
+body {
+  background: var(--color-bg-main);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+/* Override heading color when on blue/primary backgrounds */
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary h4,
+.bg-primary h5,
+.bg-primary h6,
+section.bg-primary h1,
+section.bg-primary h2,
+section.bg-primary h3,
+section.bg-primary h4,
+section.bg-primary h5,
+section.bg-primary h6,
+.slider-text h1,
+.slider-text h2,
+.slider-text h3,
+.slider-text h4,
+.slider-text h5,
+.slider-text h6,
+.slider-text h1.text-white,
+.slider-text h2.text-white,
+.slider-text h3.text-white {
+  color: #FFFFFF !important;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: var(--font-size-button);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  user-select: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: 0 4px 6px -1px rgba(30, 64, 175, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  background-color: #1E3A8A;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px -1px rgba(30, 64, 175, 0.3);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: var(--font-size-button);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  user-select: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(30, 64, 175, 0.2);
+}
+
+.btn-secondary:active {
+  background-color: var(--color-primary-hover);
+  transform: translateY(0);
+  box-shadow: 0 2px 4px -1px rgba(30, 64, 175, 0.3);
+}
+
+.btn-secondary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.3);
+}
+
+/* ============================================
+   FORM STYLES
+   ============================================ */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-input-border);
+  border-radius: 6px;
+  font-size: var(--font-size-body);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--foreground);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #FFFFFF;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #374151;
+  font-size: 14px;
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.success-message {
+  color: var(--color-success);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+
+.section {
+  width: 100%;
+  padding: 60px 20px;
+}
+
+.section-alt {
+  background-color: var(--color-bg-alt);
+}
+
+.max-w-7xl mx-auto {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================
+   SLIDER OVERLAY
+   ============================================ */
+
+.slider-overlay {
+  background: var(--color-overlay);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.slider-text {
+  color: #FFFFFF;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================
+   SWIPER CUSTOM STYLES
+   ============================================ */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination {
+  bottom: 20px !important;
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5) !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #FFFFFF !important;
+  width: 32px !important;
+  border-radius: 4px !important;
+}
+
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+
+.footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: 60px 20px;
+}
+
+.footer a {
+  color: var(--color-footer-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-gray {
+  color: var(--color-gray-text);
+}
+.text-gray-light{
+  color: var(--color-gray-light);
+}
+.text-black{
+  color: var(--color-black);
+}
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-gray-light {
+  background-color: var(--color-gray-light);
+}
+
+.border-gray {
+  border-color: var(--color-gray-border);
+}
